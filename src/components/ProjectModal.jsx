@@ -46,6 +46,17 @@ export default function ProjectModal({ project, onClose, onOpenContact }) {
         {/* Modal Scrollable Content */}
         <div className="p-6 sm:p-8 space-y-6 overflow-y-auto text-sm text-slate-300 leading-relaxed">
           
+          {/* Screenshot in Modal if Available */}
+          {project.image && (
+            <div className="rounded-xl overflow-hidden border border-slate-800 shadow-xl">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-56 sm:h-64 object-cover object-top"
+              />
+            </div>
+          )}
+
           {/* Executive Overview */}
           <div>
             <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2 font-bold">
@@ -81,7 +92,7 @@ export default function ProjectModal({ project, onClose, onOpenContact }) {
             </p>
           </div>
 
-          {/* The Architectural Solution */}
+          {/* Features Delivered */}
           <div className="p-4 rounded-xl bg-cyan-500/5 border border-cyan-500/20 space-y-2">
             <div className="flex items-center gap-2 text-cyan-400 font-semibold text-xs uppercase tracking-wider font-mono">
               <Cpu className="w-4 h-4" />
@@ -121,7 +132,7 @@ export default function ProjectModal({ project, onClose, onOpenContact }) {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-mono font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 transition"
             >
               <ExternalLink className="w-4 h-4 fill-slate-950" />
-              <span>Visit Live Website ({project.liveUrl})</span>
+              <span>Visit Live Website</span>
             </a>
           ) : (
             <a

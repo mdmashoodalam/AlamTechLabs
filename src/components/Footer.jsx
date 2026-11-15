@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Github, Linkedin, Mail, MessageSquare, ArrowUp, Phone, Globe } from 'lucide-react';
+import { Github, Linkedin, Mail, MessageSquare, ArrowUp, Phone, Globe } from 'lucide-react';
 import { agencyInfo } from '../data/agencyData';
 
 export default function Footer({ onOpenContact }) {
@@ -18,14 +18,22 @@ export default function Footer({ onOpenContact }) {
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-emerald-500 p-[1px]">
-                <div className="w-full h-full bg-[#080B11] rounded-[11px] flex items-center justify-center">
-                  <Terminal className="w-4 h-4 text-cyan-400" />
-                </div>
+              <div className="w-10 h-10 rounded-xl overflow-hidden p-[1px] bg-gradient-to-tr from-cyan-500 via-indigo-500 to-emerald-400 shrink-0">
+                <img
+                  src={agencyInfo.logo}
+                  alt="Alam TechLabs Logo"
+                  className="w-full h-full object-cover rounded-[10px]"
+                />
               </div>
-              <span className="font-extrabold text-lg text-white tracking-tight">
-                {agencyInfo.name}
-              </span>
+              <div className="flex flex-col">
+                <span className="font-black text-lg text-white tracking-tight flex items-center gap-1.5">
+                  {agencyInfo.name}
+                  <span className="text-xs font-bold text-cyan-400 font-mono">({agencyInfo.brandUrdu})</span>
+                </span>
+                <span className="text-[10px] uppercase font-mono tracking-wider text-slate-400 -mt-1">
+                  Software & Web Development Agency
+                </span>
+              </div>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">
@@ -37,7 +45,7 @@ export default function Footer({ onOpenContact }) {
                 href={`https://wa.me/${agencyInfo.founder.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 hover:bg-emerald-400 hover:text-slate-950 transition"
+                className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 hover:bg-emerald-400 hover:text-slate-950 transition shadow-sm"
                 aria-label="WhatsApp"
                 title="WhatsApp Direct"
               >
@@ -80,7 +88,7 @@ export default function Footer({ onOpenContact }) {
             </div>
           </div>
 
-          {/* Quick Services */}
+          {/* Quick Packages */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-mono uppercase tracking-wider text-white font-bold">
               Website Packages
@@ -131,13 +139,13 @@ export default function Footer({ onOpenContact }) {
               <span className="font-bold text-white block">{agencyInfo.founder.name}</span>
               <span className="text-[11px] text-cyan-400 font-mono block">Software & Web Engineer</span>
               <p className="text-[11px] text-slate-400">
-                Direct phone & WhatsApp support for every client.
+                Pupri, Bihar / Bengaluru (Serving Clients Worldwide)
               </p>
               <a
                 href={`https://wa.me/${agencyInfo.founder.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 py-2 px-3 rounded-lg bg-emerald-500/20 hover:bg-emerald-400 hover:text-slate-950 text-emerald-300 font-bold text-[11px] border border-emerald-500/30 transition text-center block"
+                className="w-full mt-2 py-2 px-3 rounded-lg bg-emerald-500/20 hover:bg-emerald-400 hover:text-slate-950 text-emerald-300 font-bold text-[11px] border border-emerald-500/30 transition text-center block shadow-sm"
               >
                 Chat on WhatsApp
               </a>
@@ -149,7 +157,7 @@ export default function Footer({ onOpenContact }) {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-slate-500">
-            &copy; {new Date().getFullYear()} {agencyInfo.name}. Developed by Md Mashood Alam.
+            &copy; {new Date().getFullYear()} {agencyInfo.name}. Developed & Maintained by Md Mashood Alam.
           </div>
 
           <div className="flex items-center gap-6 text-slate-400 font-mono text-[11px]">
