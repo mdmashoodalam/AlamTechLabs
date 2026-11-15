@@ -1,31 +1,32 @@
 import React from 'react';
-import { Star, MessageSquareQuote, CheckCircle2 } from 'lucide-react';
+import { Star, MessageSquareQuote, CheckCircle2, ExternalLink } from 'lucide-react';
 import { testimonials } from '../data/agencyData';
 
 export default function Testimonials() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 relative overflow-hidden w-full">
+      {/* 100% Width Responsive Container */}
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono uppercase tracking-widest">
             <MessageSquareQuote className="w-3.5 h-3.5" />
-            <span>Client Feedback & Validation</span>
+            <span>Client Reviews & Feedback</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-            Trusted by Founders, CTOs & <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
-              High-Growth Engineering Teams
+            Trusted by Doctors, Suppliers & <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-indigo-400">
+              Local Business Owners
             </span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            See how our architectural standards and backend engineering empower clients to scale with confidence.
+            See what real clients say about our speed, mobile responsiveness, and quality of work.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Testimonials Grid - 100% Width */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
           {testimonials.map((item, idx) => (
             <div
               key={idx}
@@ -49,12 +50,12 @@ export default function Testimonials() {
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="w-11 h-11 rounded-full object-cover border border-cyan-500/30"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-emerald-500/40"
                 />
                 <div>
                   <h4 className="font-bold text-white text-sm flex items-center gap-1.5">
                     {item.name}
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                   </h4>
                   <p className="text-xs text-slate-400 font-mono">
                     {item.role}

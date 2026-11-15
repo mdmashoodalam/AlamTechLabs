@@ -1,245 +1,288 @@
 export const agencyInfo = {
   name: "AlamTech Labs",
-  tagline: "Software & Cloud Engineering Agency",
-  subheading: "We build enterprise-grade web applications, high-throughput backend microservices, and cloud infrastructure engineered for 99.99% uptime and hyper-growth.",
+  tagline: "Web Development & Software Engineering Agency",
+  subheading: "Helping local businesses, clinics, shops, and companies build high-impact websites and custom software that drive real customers. Starting from just ₹3,000 with 48-hour delivery.",
   founder: {
     name: "Md Mashood Alam",
-    role: "Founder & Lead Solutions Architect",
-    bio: "Java Full Stack Developer & Cloud Engineer specializing in Spring Boot microservices, high-concurrency architectures, enterprise security (JWT/OAuth2/AES-256), and modern React web applications.",
+    role: "Founder & Full-Stack Software Engineer",
+    bio: "Full-Stack Software Engineer & Web Developer with expertise in building fast, mobile-friendly websites for local businesses, clinics, and enterprises using React, Spring Boot, and modern cloud technologies.",
     email: "mashoodalam05@gmail.com",
     phone: "+91 9572879110",
     whatsapp: "919572879110",
-    location: "Bengaluru, India (Available Worldwide)",
+    location: "Pupri / Bengaluru / India (Serving Local & Global Clients)",
     github: "https://github.com/mdmashoodalam",
     linkedin: "https://linkedin.com/in/mdmashoodalam",
-    calendarUrl: "https://calendly.com", // can be updated by user
+    calendarUrl: "https://calendly.com",
   },
   stats: [
-    { label: "High-Throughput Uptime", value: "99.99%", desc: "Cloud & backend SLA" },
-    { label: "Production Deployments", value: "25+", desc: "Web & microservice apps" },
-    { label: "API Response Latency", value: "< 85ms", desc: "Optimized SQL & JPA" },
-    { label: "Enterprise Security", value: "AES-256", desc: "OWASP & JWT/OAuth2" },
+    { label: "Starting Price", value: "₹3,000", desc: "Complete static website" },
+    { label: "Turnaround Time", value: "24-48 Hrs", desc: "Fast local delivery" },
+    { label: "Client Satisfaction", value: "100%", desc: "Direct engineer support" },
+    { label: "Mobile Responsive", value: "100%", desc: "Optimized for all screens" },
   ]
 };
 
 export const services = [
   {
-    id: "backend-microservices",
-    title: "Enterprise Backend & Microservices",
-    shortDesc: "Resilient, high-concurrency RESTful architectures built with Java & Spring Boot, engineered to handle heavy traffic loads effortlessly.",
-    longDesc: "We design and develop production-grade distributed backends using Spring Boot, Spring Security, Hibernate ORM, and Spring Data JPA. Every API is secured with OAuth2/JWT tokens, optimized for high throughput, and thoroughly documented with OpenAPI/Swagger.",
-    icon: "Server",
-    tags: ["Java", "Spring Boot", "REST APIs", "Microservices", "Spring Security", "JPA/Hibernate"],
-    features: [
-      "Distributed microservices architecture & 3-layer MVC",
-      "High-throughput concurrency handling & rate limiting",
-      "Robust RESTful API design with comprehensive error handling",
-      "Database connection pooling & Hibernate query optimization",
-      "WebSockets/STOMP & WebRTC for real-time streaming"
-    ],
-    highlight: "Backend Core"
-  },
-  {
-    id: "web-apps",
-    title: "Modern Full-Stack Web Applications",
-    shortDesc: "Lightning-fast, reactive web applications built with React.js, Next.js, and modern CSS with uncompromising UX & accessibility.",
-    longDesc: "Transforming complex business logic into fluid, high-converting digital interfaces. We combine React, Tailwind CSS, clean state management, and optimized asset delivery to maximize user engagement and reduce bounce rates.",
+    id: "static-website",
+    title: "Static Business & Shop Website",
+    startingPrice: "₹3,000",
+    timeline: "24–48 Hours",
+    shortDesc: "High-speed, professional website for local shops, showrooms, clinics, schools, and personal brands.",
+    longDesc: "Get your business found on Google and WhatsApp. Includes modern mobile-friendly design, services showcase, photo gallery, Google Maps location, and direct 1-click WhatsApp inquiry button.",
     icon: "Layout",
-    tags: ["React.js", "JavaScript/TypeScript", "Tailwind CSS", "Next.js", "Redux/Zustand"],
+    tags: ["HTML5/CSS3", "React", "Tailwind CSS", "WhatsApp Chat", "Google Maps"],
     features: [
-      "Dynamic single-page (SPA) & server-rendered applications",
-      "Design systems with reusable component architecture",
-      "Proven 50% increase in user retention & 25% lower bounce rates",
-      "Mobile-first responsive layouts across all viewports",
-      "API integrations with real-time state synchronization"
+      "100% mobile, tablet & desktop responsive design",
+      "Direct 1-click WhatsApp chat & click-to-call buttons",
+      "Google Maps location embed for local store walk-ins",
+      "SEO friendly setup so local customers find you on Google",
+      "Free domain & hosting guidance + SSL certificate"
     ],
-    highlight: "Frontend Excellence"
+    highlight: "Popular for Local Shops (₹3,000)"
   },
   {
-    id: "cloud-devops",
-    title: "AWS Cloud & DevOps Engineering",
-    shortDesc: "Production-ready cloud deployment, auto-scaling architectures, containerization, and automated CI/CD pipelines.",
-    longDesc: "Leverage the full power of AWS without operational headaches. We architect secure Virtual Private Clouds (VPC), configure auto-scaling compute (EC2, Lambda), managed databases (RDS), storage (S3), and DNS/CDN (Route53, CloudFront).",
-    icon: "Cloud",
-    tags: ["AWS", "Docker", "EC2", "S3", "RDS", "VPC", "CI/CD", "Lambda"],
-    features: [
-      "Zero-downtime automated deployment pipelines",
-      "AWS architecture: EC2, S3, RDS, Lambda, Route53, CloudWatch",
-      "Docker containerization for consistent environments",
-      "Auto-scaling policies with elastic load balancers",
-      "Cost optimization & multi-AZ failover configurations"
-    ],
-    highlight: "Cloud Native"
-  },
-  {
-    id: "security-auth",
-    title: "Enterprise Security & Auth Systems",
-    shortDesc: "Military-grade encryption, zero-trust token management, role-based access control, and brute-force mitigation.",
-    longDesc: "Security isn't an afterthought—it's woven into our code from line one. We implement AES-256-CBC encryption for data at rest, BCrypt password hashing, JWT + OAuth2 session validation, and strict CORS/CSRF protections.",
+    id: "clinic-doctor-portal",
+    title: "Clinics & Healthcare Web Portals",
+    startingPrice: "₹5,000",
+    timeline: "2–4 Days",
+    shortDesc: "Dedicated website for doctors, clinics, physiotherapists, and diagnostic labs with patient inquiry.",
+    longDesc: "Empower your medical practice like Hayat Health Care Clinic and FitAndPhysioAfzal. Showcase doctor profiles, timings, treatments, patient testimonials, and online appointment booking.",
     icon: "ShieldCheck",
-    tags: ["JWT", "OAuth2", "AES-256", "BCrypt", "Spring Security", "CORS/CSRF"],
+    tags: ["Healthcare", "Appointment Booking", "Doctor Profiles", "Patient Reviews"],
     features: [
-      "OAuth2 + JWT multi-tenant authentication & refresh cycles",
-      "AES-256-CBC cryptographic file & record encryption",
-      "Configurable role-based access control (RBAC)",
-      "Brute-force protection & dynamic rate limiting",
-      "OWASP Top 10 vulnerability hardening & penetration readiness"
+      "Specialist doctor profiles & OPD consultation schedules",
+      "Online appointment inquiry & WhatsApp booking flow",
+      "Patient testimonials, treatment gallery & FAQs",
+      "Emergency contact helpline and hospital directions",
+      "Fast load speed on mobile 4G/5G networks"
     ],
-    highlight: "Military-Grade"
+    highlight: "Doctors & Clinics"
   },
   {
-    id: "database-optimization",
-    title: "Database Engineering & SQL Optimization",
-    shortDesc: "Relational database modeling, query tuning, indexing, and migration strategies for MySQL and PostgreSQL.",
-    longDesc: "A slow database kills user experience. We build normalized, index-optimized schemas in MySQL and PostgreSQL, eliminating N+1 query bottlenecks and structuring reliable transaction rollbacks.",
-    icon: "Database",
-    tags: ["MySQL", "PostgreSQL", "JPA/Hibernate", "Indexing", "Query Tuning"],
-    features: [
-      "Normalized schema architecture & entity relational design",
-      "Execution plan analysis, index optimization & slow query tuning",
-      "ACID-compliant transaction management & lock avoidance",
-      "Automated backups, replication & migration scripts",
-      "High-efficiency connection pooling (HikariCP)"
-    ],
-    highlight: "Data Reliability"
-  },
-  {
-    id: "startup-mvp",
-    title: "Startup MVP Launchpad (4-6 Weeks)",
-    shortDesc: "From validated concept to production-ready market launch. Clean architecture that you can scale without a full rewrite.",
-    longDesc: "We partner with visionary founders to turn specifications into functional, investor-ready MVPs. Built on clean code foundations so you never have to throw away your prototype when you scale.",
+    id: "catalog-ecommerce",
+    title: "Product Catalog & Online Store",
+    startingPrice: "₹9,999",
+    timeline: "5–7 Days",
+    shortDesc: "Digital product showcase or full e-commerce store with WhatsApp ordering and online payments.",
+    longDesc: "Showcase your entire inventory online like CMT Tools Riyadh. Allow customers to browse products, send automated WhatsApp quotes, or pay directly via UPI, PhonePe, Google Pay, and cards.",
     icon: "Rocket",
-    tags: ["MVP Development", "Rapid Prototyping", "Full Stack", "Clean Code"],
+    tags: ["E-Commerce", "Product Catalog", "UPI / Razorpay", "WhatsApp Orders"],
     features: [
-      "End-to-end scope definition & technical architecture blueprint",
-      "Rapid sprint-based delivery with weekly staging demos",
-      "Payment gateway & user onboarding integrations",
-      "Full intellectual property (IP) & repository transfer",
-      "Post-launch 30-day dedicated warranty and monitoring"
+      "Categorized product inventory with high-res photos & specs",
+      "1-click 'Order on WhatsApp' button with pre-filled product details",
+      "Payment gateway integration (UPI, Razorpay, Cards)",
+      "Customer reviews, discount badges & search filters",
+      "Easy admin dashboard to add/update products"
     ],
-    highlight: "Fast Time-to-Market"
+    highlight: "Showrooms & Retailers"
+  },
+  {
+    id: "dynamic-cms",
+    title: "Dynamic Business Website & CMS",
+    startingPrice: "₹7,500",
+    timeline: "3–5 Days",
+    shortDesc: "Easily update your website content, blogs, photos, and notices without writing any code.",
+    longDesc: "Ideal for schools, colleges, institutes, real estate agencies, and consulting firms who need an easy-to-use admin panel to publish news, brochures, and announcements.",
+    icon: "Database",
+    tags: ["Admin Panel", "CMS", "React", "Node / Spring Boot"],
+    features: [
+      "Password-protected admin dashboard to update content",
+      "Lead collection form with instant email & WhatsApp notifications",
+      "Notice board, circulars, and downloadable PDF brochures",
+      "Photo gallery management and event updates",
+      "Fast database storage with automated backups"
+    ],
+    highlight: "Schools & Institutes"
+  },
+  {
+    id: "backend-software",
+    title: "Custom Software & Web Applications",
+    startingPrice: "₹18,000+",
+    timeline: "2–4 Weeks",
+    shortDesc: "Enterprise-grade custom web portals, billing systems, and APIs engineered with Java & Spring Boot.",
+    longDesc: "Bespoke software tailored to your specific business processes: inventory management, student portals, booking engines, and multi-tenant platforms with bank-grade security.",
+    icon: "Server",
+    tags: ["Java", "Spring Boot", "MySQL", "REST APIs", "AWS Cloud"],
+    features: [
+      "Custom business logic, billing & invoice generation",
+      "Role-based access control (Admin, Manager, Staff, Customer)",
+      "Secure database architecture (MySQL / PostgreSQL)",
+      "High-speed RESTful APIs with sub-100ms response",
+      "Cloud deployment on AWS with automated backups"
+    ],
+    highlight: "Enterprise Software"
+  },
+  {
+    id: "redesign-maintenance",
+    title: "Website Redesign & Speed Optimization",
+    startingPrice: "₹2,500",
+    timeline: "24–48 Hours",
+    shortDesc: "Upgrade an old, slow, or broken website to modern, sleek, mobile-friendly design.",
+    longDesc: "Is your existing website outdated, slow, or not working on mobile phones? We revamp it completely, boost Google search ranking, and fix security vulnerabilities.",
+    icon: "Cloud",
+    tags: ["Speed Boost", "Mobile Revamp", "SEO Audit", "SSL Security"],
+    features: [
+      "Transform outdated designs into modern premium aesthetics",
+      "Fix mobile responsiveness issues and broken layout grids",
+      "Compress images & optimize code for 95+ Google PageSpeed score",
+      "Add SSL security padlock (https://) to build customer trust",
+      "Google Business Profile & SEO ranking optimization"
+    ],
+    highlight: "Fast Revamp"
   }
 ];
 
 export const caseStudies = [
   {
+    id: "sabicmttools",
+    title: "CMT Tools — Professional Automotive Tools Catalog",
+    client: "CMT Tools (Riyadh, Saudi Arabia)",
+    category: "Commercial Product Catalog",
+    summary: "A modern automotive equipment and workshop tool catalog website developed for an established industrial supplier in Riyadh, Saudi Arabia.",
+    liveUrl: "https://sabicmttools.com/",
+    challenge: "Client needed a clean digital catalog to showcase high-precision automotive diagnostic tools, garage equipment, and hand tools with fast load times across the Gulf region.",
+    solution: "Engineered a high-performance web platform featuring a structured product catalog, mobile-optimized browsing, direct quotation inquiry buttons, and industrial brand positioning.",
+    metrics: [
+      { label: "Target Market", value: "Saudi Arabia" },
+      { label: "Mobile Speed", value: "98/100" },
+      { label: "Inquiry Flow", value: "Direct Quote" }
+    ],
+    tech: ["HTML5", "Modern CSS", "JavaScript", "Responsive Design", "Industrial UI/UX", "SEO"],
+    featured: true,
+    badge: "Live Client Website"
+  },
+  {
+    id: "hhcc",
+    title: "Hayat Health Care Clinic (HHCC) — Healthcare Portal",
+    client: "Hayat Health Care Clinic (Pupri, Bihar)",
+    category: "Clinic & Healthcare Portal",
+    summary: "Complete official clinic website for Hayat Health Care Clinic in Pupri, featuring specialist doctor directories, OPD timings, healthcare services, and online patient inquiries.",
+    liveUrl: "https://www.hhcc.online/",
+    challenge: "Patients in the local region needed an accessible way to check doctor availability, clinic consultation hours, emergency helpline numbers, and treatment facilities from their mobile phones.",
+    solution: "Designed and launched an intuitive, mobile-first healthcare portal with clean medical aesthetics, click-to-call emergency triggers, Google Maps directions, and WhatsApp consultation booking.",
+    metrics: [
+      { label: "Location", value: "Pupri, Bihar" },
+      { label: "Mobile Reach", value: "100% Responsive" },
+      { label: "Booking Mode", value: "WhatsApp / Call" }
+    ],
+    tech: ["Healthcare UI", "Appointment Form", "Google Maps", "WhatsApp Integration", "Local SEO"],
+    featured: true,
+    badge: "Live Client Website"
+  },
+  {
+    id: "fitandphysio",
+    title: "FitAndPhysioAfzal — Physiotherapy & Rehab Platform",
+    client: "FitAndPhysioAfzal Clinic",
+    category: "Physiotherapy & Appointment Booking",
+    summary: "Dedicated clinic website for a professional physiotherapy and rehabilitation specialist, providing home visit support details, pain management therapy info, and instant booking.",
+    liveUrl: "https://www.fitandphysioafzal.online/",
+    challenge: "The practitioner needed a high-trust digital presence to explain physiotherapy treatments (neuro, ortho, sports injury) and allow patients or their families to book home visits and clinic appointments easily.",
+    solution: "Built a warm, professional physiotherapy platform with structured service cards, patient recovery testimonials, WhatsApp appointment scheduler, and local search visibility.",
+    metrics: [
+      { label: "Specialty", value: "Physio & Rehab" },
+      { label: "Patient Action", value: "1-Click Booking" },
+      { label: "Device Support", value: "All Phones" }
+    ],
+    tech: ["Modern Web", "Physiotherapy UX", "WhatsApp Scheduler", "SEO Friendly", "Fast Hosting"],
+    featured: true,
+    badge: "Live Client Website"
+  },
+  {
     id: "skill-swap",
-    title: "SkillSwap: Real-Time Peer Learning Platform",
-    client: "EdTech Startup Solution",
+    title: "SkillSwap — Real-Time Peer Learning Platform",
+    client: "Full-Stack EdTech Project",
     category: "Full Stack Application",
-    summary: "A peer-to-peer talent & skill exchange ecosystem facilitating automated skill matching, real-time messaging, and interactive WebRTC audio/video consultations.",
-    challenge: "Enabling synchronous two-way communication between students and professionals with sub-second message delivery and stable peer-to-peer WebRTC video channels while handling secure session reservations.",
-    solution: "Engineered high-performance REST APIs in Spring Boot 3.5 backed by MySQL. Integrated WebSocket/STOMP protocols for instant bi-directional messaging, WebRTC for direct browser-to-browser media streaming, and Spring Security with JWT for seamless session verification.",
+    summary: "A peer-to-peer talent & skill exchange ecosystem with Spring Boot 3.5, STOMP/WebSocket real-time messaging, and WebRTC audio/video consultations.",
+    liveUrl: "https://github.com/mdmashoodalam",
+    challenge: "Enabling synchronous two-way communication between students and professionals with sub-second message delivery and stable WebRTC video channels.",
+    solution: "Engineered REST APIs in Spring Boot 3.5 with Spring Security, JWT, MySQL, WebSocket/STOMP, and WebRTC peer-to-peer streaming.",
     metrics: [
       { label: "Real-Time Latency", value: "< 50ms" },
-      { label: "Active Connections", value: "Concurrent STOMP" },
-      { label: "Tech Stack", value: "Spring Boot 3.5, WebRTC, React" }
+      { label: "Connections", value: "STOMP WebSocket" },
+      { label: "Architecture", value: "Spring Boot 3.5" }
     ],
-    tech: ["Java", "Spring Boot 3.5", "WebSocket / STOMP", "WebRTC", "Spring Security", "JWT", "JPA", "MySQL"],
-    demoLink: "#contact",
-    githubLink: "https://github.com/mdmashoodalam",
-    featured: true
+    tech: ["Java", "Spring Boot 3.5", "WebSocket / STOMP", "WebRTC", "Spring Security", "JWT", "MySQL"],
+    featured: false,
+    badge: "Full-Stack WebRTC"
   },
   {
     id: "secure-file-vault",
-    title: "VaultShare: Enterprise Zero-Knowledge File Vault",
+    title: "VaultShare — Enterprise Zero-Knowledge File Vault",
     client: "Cybersecurity & Data Privacy",
     category: "Security & Cloud Backend",
-    summary: "An enterprise-grade secure file management platform featuring end-to-end cryptographic protection, token-based time-locked sharing, and automated brute-force rate-limiting.",
-    challenge: "Protecting sensitive corporate documents against unauthorized access, credential stuffing, and data breaches while maintaining frictionless sharing capabilities with external partners.",
-    solution: "Designed a strict 3-layer MVC architecture leveraging Spring Boot and React. Implemented AES-256-CBC encryption for all stored assets, BCrypt hashing for credentials, JWT + OAuth2 authorization barriers, and token-based download links with configurable access limits and self-destruct timers.",
+    summary: "An enterprise-grade secure file management platform featuring AES-256-CBC encryption, token-based time-locked sharing, and brute-force rate-limiting.",
+    liveUrl: "https://github.com/mdmashoodalam",
+    challenge: "Protecting sensitive corporate documents against unauthorized access while maintaining frictionless sharing capabilities.",
+    solution: "Designed a 3-layer MVC architecture in Spring Boot with AES-256-CBC encryption, BCrypt password hashing, and JWT/OAuth2 authentication.",
     metrics: [
-      { label: "Encryption Standard", value: "AES-256-CBC" },
-      { label: "Threat Mitigation", value: "100% Rate Limited" },
+      { label: "Encryption", value: "AES-256-CBC" },
+      { label: "Rate Limit", value: "Protected" },
       { label: "Compliance", value: "OWASP Hardened" }
     ],
-    tech: ["Spring Boot", "React", "MySQL", "JWT & OAuth2", "AES-256-CBC", "BCrypt", "Rate Limiting"],
-    demoLink: "#contact",
-    githubLink: "https://github.com/mdmashoodalam",
-    featured: true
+    tech: ["Spring Boot", "React", "MySQL", "JWT & OAuth2", "AES-256-CBC", "BCrypt"],
+    featured: false,
+    badge: "Enterprise Security"
   },
   {
     id: "quickbite-logistics",
-    title: "QuickBite: High-Throughput Food Ordering Engine",
-    client: "Quick-Commerce & Hospitality",
+    title: "QuickBite — Food Ordering & Dispatch Engine",
+    client: "Hospitality & Restaurant Tech",
     category: "Backend RESTful Microservice",
-    summary: "A fault-tolerant online ordering and kitchen dispatch backend capable of handling high-velocity concurrent food orders, dynamic inventory updates, and multi-tenant restaurant profiles.",
-    challenge: "Eliminating order race conditions during peak flash-sale hours, synchronizing restaurant menu states in real time, and maintaining consistent transactional integrity across multiple databases.",
-    solution: "Engineered scalable REST APIs in Spring Boot with fine-grained relational transaction controls in MySQL. Implemented database query optimizations, preventing deadlocks and reducing peak checkout duration by 40%.",
+    summary: "A fault-tolerant online food ordering and kitchen dispatch backend capable of handling high-velocity concurrent food orders and real-time inventory updates.",
+    liveUrl: "https://github.com/mdmashoodalam",
+    challenge: "Eliminating order race conditions during peak hours and maintaining consistent transactional integrity across multiple menus.",
+    solution: "Engineered scalable REST APIs in Spring Boot with fine-grained relational transaction controls in MySQL, reducing peak checkout duration by 40%.",
     metrics: [
-      { label: "Order Checkout Time", value: "-40%" },
-      { label: "Transaction Safety", value: "ACID Guaranteed" },
-      { label: "API Availability", value: "99.98%" }
+      { label: "Checkout Speed", value: "-40% Time" },
+      { label: "Safety", value: "ACID Guaranteed" },
+      { label: "Uptime", value: "99.98%" }
     ],
-    tech: ["Spring Boot", "RESTful APIs", "MySQL", "Postman Test Suites", "HikariCP"],
-    demoLink: "#contact",
-    githubLink: "https://github.com/mdmashoodalam",
-    featured: true
-  },
-  {
-    id: "innogenx-portal",
-    title: "Innogenx: High-Conversion Enterprise Web Suite",
-    client: "Digital Growth & Product Marketing",
-    category: "Modern Frontend UI/UX",
-    summary: "Architected and delivered 3+ enterprise React applications with high-performance interactive interfaces, structured component libraries, and optimized customer journeys.",
-    challenge: "Modernizing legacy web properties that suffered from slow load times, high bounce rates (over 65%), and disjointed user conversion flows.",
-    solution: "Engineered reusable, modular React component architecture with Tailwind CSS styling, optimized bundle splitting, and client-side caching. Achieved dramatic speed upgrades and streamlined sales funnel paths.",
-    metrics: [
-      { label: "User Engagement", value: "+50%" },
-      { label: "Bounce Rate Reduction", value: "-25%" },
-      { label: "Applications Delivered", value: "3+ Production Apps" }
-    ],
-    tech: ["React.js", "JavaScript ES6+", "Tailwind CSS", "HTML5/CSS3", "Webpack"],
-    demoLink: "#contact",
-    githubLink: "https://github.com/mdmashoodalam",
-    featured: false
+    tech: ["Spring Boot", "RESTful APIs", "MySQL", "HikariCP", "Postman"],
+    featured: false,
+    badge: "High Concurrency"
   }
 ];
 
 export const techStack = [
   {
-    category: "Backend & Core",
-    description: "Battle-tested, enterprise-grade backends built for high concurrency and strict reliability.",
+    category: "Frontend & Mobile-First Web",
+    description: "Lightning-fast, mobile-optimized websites designed to convert visitors into paying clients.",
     skills: [
-      { name: "Java (8+ / 17 / 21)", level: "Expert", desc: "Core & Advanced Java, OOP, Multithreading, Concurrency" },
-      { name: "Spring Boot 3.x", level: "Expert", desc: "REST APIs, Microservices, Dependency Injection, Actuator" },
-      { name: "Spring Security", level: "Expert", desc: "JWT, OAuth2, RBAC, Filters, CORS/CSRF Protection" },
-      { name: "Hibernate & JPA", level: "Advanced", desc: "ORM, Entity Mapping, Criteria API, Query Optimization" },
-      { name: "WebSocket & WebRTC", level: "Advanced", desc: "STOMP protocol, real-time messaging, peer video/audio" },
-      { name: "Node.js & Express", level: "Proficient", desc: "Lightweight microservices, tooling & CLI scripts" }
+      { name: "React.js & Next.js", level: "Expert", desc: "Interactive modern web apps and dynamic interfaces" },
+      { name: "Tailwind CSS & Modern CSS", level: "Expert", desc: "Pixel-perfect mobile responsiveness across every smartphone" },
+      { name: "HTML5 & JavaScript ES6+", level: "Expert", desc: "Clean semantic markup, animations, and high Google PageSpeed" },
+      { name: "WhatsApp & Call Triggers", level: "Expert", desc: "1-click customer contact links for high local conversions" }
     ]
   },
   {
-    category: "Frontend & UI/UX",
-    description: "Responsive, responsive web applications with exceptional interaction design.",
+    category: "Backend & Custom Software",
+    description: "Robust, scalable backends built with Java, Spring Boot, and modern REST APIs.",
     skills: [
-      { name: "React.js", level: "Expert", desc: "Hooks, Context API, Performance Profiling, Custom Components" },
-      { name: "JavaScript / ES6+", level: "Expert", desc: "Async/Await, DOM, Event Loop, Modern Syntax" },
-      { name: "Tailwind CSS", level: "Expert", desc: "Modern utility-first styling, design systems, dark mode" },
-      { name: "HTML5 & CSS3", level: "Expert", desc: "Semantic markup, CSS Grid/Flexbox, animations" },
-      { name: "Bootstrap", level: "Advanced", desc: "Rapid grid prototyping & responsive UI elements" }
+      { name: "Java (8 / 17 / 21 LTS)", level: "Expert", desc: "Core & Advanced Java, OOP, concurrency, enterprise stability" },
+      { name: "Spring Boot 3.x", level: "Expert", desc: "Microservices, RESTful APIs, high-throughput business logic" },
+      { name: "Spring Security & JWT", level: "Expert", desc: "User logins, password protection, role management" },
+      { name: "Hibernate & JPA", level: "Advanced", desc: "Database modeling, query speed optimization" }
     ]
   },
   {
-    category: "Cloud, DevOps & Infrastructure",
-    description: "Cloud-native architectures, containerization, and automated deployments.",
+    category: "Databases & Local Integrations",
+    description: "Safe data storage, online payments, and local search integrations.",
     skills: [
-      { name: "AWS EC2 & S3", level: "Advanced", desc: "Virtual compute instances, object storage, lifecycle rules" },
-      { name: "AWS RDS & VPC", level: "Advanced", desc: "Managed relational databases, isolated subnet networks" },
-      { name: "AWS Lambda & CloudWatch", level: "Advanced", desc: "Serverless execution, system metrics, alarms, logging" },
-      { name: "Docker Containerization", level: "Advanced", desc: "Multi-stage Dockerfiles, Docker Compose, container orchestration" },
-      { name: "CI/CD & Git/GitHub", level: "Expert", desc: "Version control workflows, branching models, automated builds" }
+      { name: "MySQL & PostgreSQL", level: "Expert", desc: "Customer records, inventory, and transaction security" },
+      { name: "UPI & Razorpay Payments", level: "Expert", desc: "Accept Google Pay, PhonePe, Paytm, cards, and net banking" },
+      { name: "Google Maps & Local SEO", level: "Expert", desc: "Get listed on Google Maps so local customers find your store" },
+      { name: "Domain & SSL Setup", level: "Expert", desc: "Free HTTPS green padlock, .com / .in / .online domain configuration" }
     ]
   },
   {
-    category: "Databases & Security",
-    description: "Rock-solid data persistence, high availability, and cryptographic security.",
+    category: "Cloud, Hosting & Maintenance",
+    description: "Fast hosting, 24/7 uptime, and hassle-free technical maintenance.",
     skills: [
-      { name: "MySQL & PostgreSQL", level: "Expert", desc: "Schema design, relational indexes, ACID transactions" },
-      { name: "JWT & OAuth2", level: "Expert", desc: "Stateless authentication, token rotation, social sign-ins" },
-      { name: "AES-256 Encryption", level: "Advanced", desc: "Symmetric key encryption for sensitive data at rest" },
-      { name: "BCrypt & Passwords", level: "Expert", desc: "Salted cryptographic password hashing standards" },
-      { name: "Postman & API Testing", level: "Expert", desc: "Automated test collections, mock servers, documentation" }
+      { name: "Fast Cloud Hosting & CDN", level: "Expert", desc: "Sub-second loading times for visitors across India & globally" },
+      { name: "AWS Cloud (EC2, S3, RDS)", level: "Advanced", desc: "Cloud infrastructure for scalable software applications" },
+      { name: "Docker & CI/CD", level: "Advanced", desc: "Containerized deployments and automated zero-downtime updates" },
+      { name: "24/7 Monitoring & Backups", level: "Expert", desc: "Regular website backups and quick maintenance support" }
     ]
   }
 ];
@@ -247,94 +290,129 @@ export const techStack = [
 export const processSteps = [
   {
     step: "01",
-    title: "Discovery & Technical Blueprint",
-    desc: "We analyze your requirements, business goals, and traffic projections. We define the database schema, API contracts, and cloud architecture before writing a single line of code.",
-    deliverables: "Architecture Diagram, API Specifications, Project Scope & Milestones"
+    title: "Quick Chat & Requirement Discussion",
+    desc: "We discuss your business type (shop, clinic, service, startup), your products or services, and what you want on the website over a quick WhatsApp or phone call.",
+    deliverables: "Exact Fixed Price (Starting ₹3,000) & Delivery Date"
   },
   {
     step: "02",
-    title: "UI/UX & Interactive Prototype",
-    desc: "We engineer pixel-perfect, accessible component systems in React. You test real workflows on interactive staging environments to refine UX early.",
-    deliverables: "Design System, Interactive Staging Previews, Responsive Layouts"
+    title: "Design & Content Setup",
+    desc: "We design a clean, modern, 100% mobile-friendly layout with your business photos, contact numbers, services, and Google Maps location.",
+    deliverables: "Live Preview Link on Your Mobile Phone"
   },
   {
     step: "03",
-    title: "Hardened Backend & Cloud Testing",
-    desc: "We build the Spring Boot microservices, enforce Spring Security JWT/OAuth2 barriers, optimize SQL queries, and configure AWS cloud infrastructure.",
-    deliverables: "Secured REST Endpoints, Database Migrations, Automated Test Suite"
+    title: "Review & Fast Revisions",
+    desc: "You review the preview on your phone or computer. We make any text or photo adjustments you need until you are 100% satisfied.",
+    deliverables: "Fine-Tuned Website Ready to Launch"
   },
   {
     step: "04",
-    title: "Production Launch & 24/7 Support",
-    desc: "We deploy to AWS with zero-downtime CI/CD pipelines, configure CloudWatch monitoring, and hand over 100% of the source code, documentation, and IP.",
-    deliverables: "Production Deployment, Source Code Transfer, 30-Day Launch Warranty"
+    title: "Launch & Google Setup",
+    desc: "We connect your domain (.com / .in), activate free SSL security, test WhatsApp buttons, and submit the site to Google search.",
+    deliverables: "Live Website + 30 Days Free Support"
   }
 ];
 
 export const estimatorData = {
   projectTypes: [
-    { id: "webapp", name: "Custom Web Application", baseWeeks: 4, basePrice: 1500, desc: "React / Full-stack app with dashboard & user management" },
-    { id: "backend", name: "Enterprise Backend & REST APIs", baseWeeks: 3, basePrice: 1200, desc: "Spring Boot microservices, high concurrency, database architecture" },
-    { id: "fullstack", name: "End-to-End Enterprise System", baseWeeks: 6, basePrice: 2800, desc: "Full Stack (React + Spring Boot + AWS Cloud + Security)" },
-    { id: "mvp", name: "Startup MVP Launchpad", baseWeeks: 4, basePrice: 1800, desc: "Rapid concept-to-market development for early traction" }
+    { 
+      id: "static", 
+      name: "Basic Static Business Website", 
+      baseDays: "1–2 Days", 
+      basePrice: 3000, 
+      desc: "Perfect for local shops, clinics, traders, and personal portfolios. Fast, clean & mobile responsive." 
+    },
+    { 
+      id: "clinic", 
+      name: "Clinic / Healthcare / Booking Website", 
+      baseDays: "2–4 Days", 
+      basePrice: 5000, 
+      desc: "For doctors, physiotherapists, clinics & consultants with online appointment and inquiry flow." 
+    },
+    { 
+      id: "dynamic", 
+      name: "Dynamic Business Website + Admin CMS", 
+      baseDays: "3–6 Days", 
+      basePrice: 7500, 
+      desc: "For schools, institutes, real estate & firms needing an easy panel to update photos & notices." 
+    },
+    { 
+      id: "ecommerce", 
+      name: "Online Store / Product Catalog", 
+      baseDays: "5–8 Days", 
+      basePrice: 12000, 
+      desc: "Product catalog with 1-click WhatsApp orders, UPI payments, and inventory management." 
+    },
+    { 
+      id: "custom", 
+      name: "Custom Full-Stack Web Application", 
+      baseDays: "2–3 Weeks", 
+      basePrice: 20000, 
+      desc: "Tailored software, billing portals, and database systems built with Java, Spring Boot & React." 
+    }
   ],
   featureAddons: [
-    { id: "auth", name: "Enterprise Auth & OAuth2/JWT", price: 300, weeks: 1 },
-    { id: "encryption", name: "AES-256 Data Encryption & Vault", price: 400, weeks: 1 },
-    { id: "realtime", name: "WebSockets / Real-Time Chat & WebRTC", price: 500, weeks: 1.5 },
-    { id: "aws", name: "AWS Cloud Infrastructure (EC2, RDS, S3, VPC)", price: 450, weeks: 1 },
-    { id: "payment", name: "Stripe / Razorpay Payment Integration", price: 350, weeks: 0.5 },
-    { id: "admin", name: "SuperAdmin Dashboard & Analytics", price: 400, weeks: 1 }
+    { id: "whatsapp", name: "Floating WhatsApp Chat Button", price: 0, desc: "FREE Included" },
+    { id: "maps", name: "Google Maps & Business Location", price: 500, desc: "+ ₹500" },
+    { id: "domain", name: "Domain & Cloud Hosting Setup", price: 1000, desc: "+ ₹1,000" },
+    { id: "payment", name: "UPI / Razorpay / Online Payment", price: 1500, desc: "+ ₹1,500" },
+    { id: "admin", name: "Custom Admin Panel to Edit Text/Photos", price: 2000, desc: "+ ₹2,000" },
+    { id: "express", name: "Express 24-Hour Urgent Delivery", price: 1000, desc: "+ ₹1,000" }
   ],
   timelines: [
-    { id: "standard", name: "Standard (Thorough & Agile)", multiplier: 1.0 },
-    { id: "accelerated", name: "Accelerated Sprint (Priority)", multiplier: 1.25 }
+    { id: "standard", name: "Standard Delivery (2–4 Days)", multiplier: 1.0 },
+    { id: "urgent", name: "Urgent Priority (24–48 Hours)", multiplier: 1.15 }
   ]
 };
 
 export const testimonials = [
   {
-    name: "Alexandre Mercier",
-    role: "CTO, SkillBridge Global",
-    content: "Working with Md Mashood Alam and AlamTech Labs transformed our platform. The Spring Boot backend handles our real-time WebSockets with zero lag, and the code quality is cleaner than what we received from 15-person agencies.",
+    name: "Dr. Afzal",
+    role: "Physiotherapist & Founder, FitAndPhysioAfzal",
+    content: "Md Mashood Alam built our clinic website fitandphysioafzal.online with great care. Patients easily check our services and book appointments directly through WhatsApp. The website is very fast and works smoothly on every mobile phone.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80"
+    avatar: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=120&auto=format&fit=crop&q=80"
   },
   {
-    name: "Rajesh Mathur",
-    role: "Co-Founder, QuickBite Logistics",
-    content: "Our online ordering system was crashing on weekend spikes. Mashood redesigned the database transactions and REST APIs with Spring Boot. Not only did our checkout time drop by 40%, but we haven't had a single outage since launch.",
+    name: "Management Team",
+    role: "Hayat Health Care Clinic (HHCC), Pupri",
+    content: "Our clinic needed a trustworthy online presence for local patients. Mashood delivered hhcc.online quickly with doctor details, emergency contact, and Google Maps directions. Highly recommended for any clinic or local business!",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=120&auto=format&fit=crop&q=80"
+  },
+  {
+    name: "CMT Tools Operations",
+    role: "Automotive Tools Supplier, Riyadh",
+    content: "We required a professional digital catalog sabicmttools.com for our automotive and garage tools in Saudi Arabia. The website layout is clean, fast, and makes it easy for clients to browse and request quotes.",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80"
-  },
-  {
-    name: "Sarah Lindqvist",
-    role: "Product Director, Nordic SecureTech",
-    content: "The AES-256 encryption and Spring Security implementation delivered for our file storage vault was flawless. Passed our external vulnerability audit on the first review. Outstanding engineering standards.",
-    rating: 5,
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80"
   }
 ];
 
 export const faqs = [
   {
-    question: "Why hire AlamTech Labs instead of a big software agency or freelancer?",
-    answer: "Big agencies assign junior developers while charging you high overhead for account managers. Freelancers often disappear or deliver unmaintainable spaghetti code. At AlamTech Labs, you work directly with a Senior Java Full Stack & Cloud Architect (Md Mashood Alam). You get enterprise-grade Spring Boot + React architectures, complete transparency, and code built to scale from day one."
+    question: "Can I really get a complete website starting at just ₹3,000?",
+    answer: "Yes, absolutely! Our ₹3,000 package is specifically designed for local shops, clinics, traders, and personal brands who need a fast, professional, 100% mobile-friendly website with their business information, services, photos, Google Maps location, and a 1-click WhatsApp inquiry button. There are no hidden fees."
   },
   {
-    question: "Who owns the code and intellectual property (IP)?",
-    answer: "You do—100%. Upon completion of project milestones and final settlement, all intellectual property, source code repositories, cloud environment credentials, and documentation are transferred fully and exclusively to your company."
+    question: "How long will it take to complete my website?",
+    answer: "A basic static business website takes only 24 to 48 hours once you provide your business details and photos. For clinics, dynamic websites, or e-commerce stores, it typically takes 3 to 7 days."
   },
   {
-    question: "What is your typical project timeline?",
-    answer: "A focused MVP or backend microservice usually takes 3 to 6 weeks. Larger enterprise systems typically range from 8 to 12 weeks. We work in 1-to-2 week agile sprints with live staging demos so you see tangible progress every week."
+    question: "Will my website work properly on mobile phones?",
+    answer: "Yes, 100%! Over 85% of local customers browse from mobile phones. Every website we create is thoroughly tested across Android and iPhone screens to ensure lightning-fast speed, readable text, and easy tap buttons."
   },
   {
-    question: "Do you offer post-launch support and maintenance?",
-    answer: "Yes! Every project includes 30 days of complimentary bug-fixing and monitoring support after launch. We also offer ongoing monthly SLA maintenance packages covering AWS server monitoring, security updates, database backups, and feature iterations."
+    question: "What do I need to provide to start?",
+    answer: "You just need to share your business name, contact phone number, address, services/products list, and any photos or logos you have. If you don't have a logo or photos, don't worry—we will help you source high-quality royalty-free graphics and design a clean presentation."
   },
   {
-    question: "How do we get started?",
-    answer: "Simply click 'Book Discovery Call' or submit the project inquiry form below. We'll set up a 20-minute technical discovery call to review your specifications and send you a detailed architecture roadmap and fixed-price quote within 24-48 hours."
+    question: "How will local customers contact me from the website?",
+    answer: "We include prominent, sticky 1-click WhatsApp chat buttons and Click-to-Call buttons. When a customer taps the button, your WhatsApp opens instantly with a pre-typed inquiry message so they can reach you in one second!"
+  },
+  {
+    question: "Do you also build custom software or web applications?",
+    answer: "Yes! In addition to local business websites, we engineer full-scale custom web portals, billing systems, and backend microservices using Java, Spring Boot, React, and MySQL for companies needing custom automation."
   }
 ];

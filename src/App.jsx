@@ -28,8 +28,8 @@ export default function App() {
     setPrefilledContact({
       projectType: serviceTitle,
       addons: [],
-      estimatedRange: 'Custom Scope Proposal',
-      estimatedWeeks: '3 - 8 Weeks'
+      estimatedRange: '₹3,000 - ₹8,000',
+      estimatedWeeks: '1 - 3 Days'
     });
     handleOpenContact();
   };
@@ -40,25 +40,25 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080B11] text-slate-100 flex flex-col font-sans selection:bg-cyan-500 selection:text-white">
-      {/* Sticky Navigation */}
+    <div className="w-full min-h-screen bg-[#080B11] text-slate-100 flex flex-col font-sans selection:bg-cyan-500 selection:text-white overflow-x-hidden">
+      {/* Sticky Navigation - 100% Width */}
       <Navbar onOpenContact={handleOpenContact} />
 
-      {/* Main Page Content */}
-      <main className="flex-1">
+      {/* Main Page Content - 100% Width */}
+      <main className="flex-1 w-full">
         <Hero onOpenContact={handleOpenContact} />
         
-        <Services onSelectService={handleSelectService} />
-
         <Portfolio onOpenCaseStudy={(project) => setSelectedCaseStudy(project)} />
 
-        <TechStack />
-
         <ProjectEstimator onOpenContactWithDetails={handleOpenContactWithDetails} />
+
+        <Services onSelectService={handleSelectService} />
 
         <Process onOpenContact={handleOpenContact} />
 
         <WhyUs onOpenContact={handleOpenContact} />
+
+        <TechStack />
 
         <Testimonials />
 
@@ -70,7 +70,7 @@ export default function App() {
         />
       </main>
 
-      {/* Footer */}
+      {/* Footer - 100% Width */}
       <Footer onOpenContact={handleOpenContact} />
 
       {/* Case Study Architectural Modal */}
