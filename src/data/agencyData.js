@@ -19,6 +19,7 @@ export const agencyInfo = {
   // Form submission destination settings (Email, WhatsApp, Google Sheets)
   leadConfig: {
     emailRecipient: "info@alamtechlabs.online",
+    formSubmitToken: "6d97e059634a2e65a8d0e33ca1364e5c",
     web3FormsAccessKey: "",
     // Connected Google Sheets Webhook URL
     googleSheetWebhookUrl: "https://script.google.com/macros/s/AKfycbwo1-jI_NVz0ElrUYHr-aZcdLcrw4S7IcQSffxIgutOubmb_0FeYWVluDXzEIOJqy5p/exec",

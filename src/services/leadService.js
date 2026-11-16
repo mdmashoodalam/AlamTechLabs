@@ -60,8 +60,9 @@ export async function submitLead(formData) {
         results.email = true;
       }
     } else {
-      // Direct FormSubmit.co service targeting info@alamtechlabs.online (Zero API key needed)
-      const formSubmitResponse = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
+      // Direct FormSubmit.co service (using spam-protected token or direct email)
+      const formSubmitTarget = agencyInfo.leadConfig?.formSubmitToken || recipientEmail;
+      const formSubmitResponse = await fetch(`https://formsubmit.co/ajax/${formSubmitTarget}`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
