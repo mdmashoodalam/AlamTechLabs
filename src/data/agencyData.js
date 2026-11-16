@@ -16,6 +16,16 @@ export const agencyInfo = {
     linkedin: "https://linkedin.com/in/mdmashoodalam",
     calendarUrl: "https://calendly.com",
   },
+  // Form submission destination settings (Email, WhatsApp, Google Sheets)
+  leadConfig: {
+    emailRecipient: "mashoodalam05@gmail.com",
+    // Paste your free key from https://web3forms.com/ to enable instant email delivery to your Gmail
+    web3FormsAccessKey: "",
+    // Paste your Google Apps Script Webhook URL to save submissions directly to your Google Sheet
+    googleSheetWebhookUrl: "",
+    // Whether to auto-open WhatsApp with the message right when client submits
+    autoOpenWhatsAppOnSubmit: true,
+  },
   stats: [
     { label: "Starting Price", value: "₹3,000", desc: "Complete static website" },
     { label: "Turnaround Time", value: "24-48 Hrs", desc: "Fast local delivery" },
