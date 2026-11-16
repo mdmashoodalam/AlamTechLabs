@@ -19,10 +19,9 @@ export const agencyInfo = {
   // Form submission destination settings (Email, WhatsApp, Google Sheets)
   leadConfig: {
     emailRecipient: "info@alamtechlabs.online",
-    // Paste your free key from https://web3forms.com/ to enable instant email delivery to info@alamtechlabs.online
     web3FormsAccessKey: "",
-    // Paste your Google Apps Script Webhook URL to save submissions directly to your Google Sheet
-    googleSheetWebhookUrl: "",
+    // Connected Google Sheets Webhook URL
+    googleSheetWebhookUrl: "https://script.google.com/macros/s/AKfycbwo1-jI_NVz0ElrUYHr-aZcdLcrw4S7IcQSffxIgutOubmb_0FeYWVluDXzEIOJqy5p/exec",
     // Separate WhatsApp button is used, not combined with form submit
     autoOpenWhatsAppOnSubmit: false,
   },
