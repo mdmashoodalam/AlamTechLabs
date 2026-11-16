@@ -8,7 +8,7 @@ export const agencyInfo = {
     name: "Md Mashood Alam",
     role: "Founder & Full-Stack Software Engineer",
     bio: "Full-Stack Software Engineer & Web Developer with expertise in building fast, mobile-friendly websites for local businesses, clinics, and enterprises using React, Spring Boot, and modern cloud technologies.",
-    email: "mashoodalam05@gmail.com",
+    email: "info@alamtechlabs.online",
     phone: "+91 9572879110",
     whatsapp: "919572879110",
     location: "Pupri, Bihar / Bengaluru (Serving Clients Worldwide)",
@@ -18,13 +18,13 @@ export const agencyInfo = {
   },
   // Form submission destination settings (Email, WhatsApp, Google Sheets)
   leadConfig: {
-    emailRecipient: "mashoodalam05@gmail.com",
-    // Paste your free key from https://web3forms.com/ to enable instant email delivery to your Gmail
+    emailRecipient: "info@alamtechlabs.online",
+    // Paste your free key from https://web3forms.com/ to enable instant email delivery to info@alamtechlabs.online
     web3FormsAccessKey: "",
     // Paste your Google Apps Script Webhook URL to save submissions directly to your Google Sheet
     googleSheetWebhookUrl: "",
-    // Whether to auto-open WhatsApp with the message right when client submits
-    autoOpenWhatsAppOnSubmit: true,
+    // Separate WhatsApp button is used, not combined with form submit
+    autoOpenWhatsAppOnSubmit: false,
   },
   stats: [
     { label: "Starting Price", value: "₹3,000", desc: "Complete static website" },
@@ -327,7 +327,7 @@ export const processSteps = [
   {
     step: "04",
     title: "Launch & Google Setup",
-    desc: "We connect your domain (.com / .in), activate free SSL security, test WhatsApp buttons, and submit the site to Google search.",
+    desc: "We connect your domain (.com / .in / .online), activate free SSL security, test WhatsApp buttons, and submit the site to Google search.",
     deliverables: "Live Website + 30 Days Free Support"
   }
 ];

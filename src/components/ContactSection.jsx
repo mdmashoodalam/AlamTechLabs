@@ -10,7 +10,6 @@ import {
   Calendar,
   Sparkles,
   MapPin,
-  ExternalLink,
   FileSpreadsheet,
   Check
 } from 'lucide-react';
@@ -25,13 +24,11 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
     businessType: 'Local Shop / Clinic / Service',
     service: services[0].title,
     budget: '₹3,000 (Basic Static Package)',
-    message: '',
-    openWhatsAppOnSubmit: true
+    message: ''
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [submissionResult, setSubmissionResult] = useState(null);
 
   useEffect(() => {
     if (prefilledData) {
@@ -44,26 +41,17 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
     }
   }, [prefilledData]);
 
+  // Form Submission: ONLY submits form and adds data into Google Sheet / Email
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      // Execute all 3 dispatch actions:
-      // 1. Email dispatch (Web3Forms to mashoodalam05@gmail.com)
-      // 2. Google Sheets webhook dispatch
-      // 3. LocalStorage persistence
-      const result = await submitLead(formData);
-      setSubmissionResult(result);
+      await submitLead(formData);
       setLoading(false);
       setSubmitted(true);
 
       if (clearPrefill) clearPrefill();
-
-      // Option 2: Auto-open WhatsApp with the message if enabled
-      if (formData.openWhatsAppOnSubmit && result.whatsappUrl) {
-        window.open(result.whatsappUrl, '_blank');
-      }
     } catch (err) {
       console.error('Submission failed:', err);
       setLoading(false);
@@ -71,12 +59,14 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
     }
   };
 
+  // Separate WhatsApp Trigger (Independent button, NOT tied to submit)
   const openWhatsAppDirect = () => {
     const text = encodeURIComponent(
       `*DIRECT INQUIRY - ALAM TECHLABS*\n\n` +
       `👤 Name: ${formData.name || 'Visitor'}\n` +
       `📞 Phone: ${formData.phone || 'Not provided'}\n` +
-      `📦 Service: ${formData.service}\n` +
+      `📧 Email: ${formData.email || 'Not provided'}\n` +
+      `📦 Package: ${formData.service}\n` +
       `💰 Budget: ${formData.budget}\n` +
       `📝 Requirements: ${formData.message || 'I would like to discuss getting a website made.'}`
     );
@@ -95,73 +85,59 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
         <div className="text-center max-w-4xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono uppercase tracking-widest font-bold">
             <Calendar className="w-3.5 h-3.5" />
-            <span>Multi-Channel Inquiries &bull; 48-Hour Delivery</span>
+            <span>Get Started &bull; 24 to 48-Hour Delivery</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Ready to Take Your Business Online? <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-indigo-400">
-              Send Your Inquiry Across 3 Channels
+              Submit Your Project Scope
             </span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Your inquiry is routed directly to <strong>Gmail (`{agencyInfo.founder.email}`)</strong>, sent to <strong>WhatsApp</strong>, and recorded for quick turnaround.
+            Submit your details below. We review your requirements and get back to you with a free consultation and project roadmap.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start w-full">
           
-          {/* Left Column: Direct Founder Contacts & Transmission Channels */}
+          {/* Left Column: Direct Founder Contacts */}
           <div className="lg:col-span-5 space-y-6 w-full">
             <div className="rounded-2xl bg-slate-900/80 border border-slate-800 p-8 space-y-6 shadow-xl">
               <h3 className="text-xl font-bold text-white flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-emerald-400" />
-                <span>How Your Inquiry Reaches Us</span>
+                <span>Direct Contact Information</span>
               </h3>
               
-              {/* 3 Channels Breakdown Badges */}
-              <div className="space-y-3 pt-1">
-                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <Mail className="w-4 h-4" />
+              {/* Contact Cards */}
+              <div className="space-y-3.5 pt-1">
+                {/* Official Email */}
+                <a
+                  href={`mailto:${agencyInfo.founder.email}`}
+                  className="flex items-center gap-3.5 p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-cyan-400/50 transition group"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
+                    <Mail className="w-5 h-5" />
                   </div>
-                  <div className="text-xs">
-                    <span className="font-bold text-white block">1. Instant Email Delivery</span>
-                    <span className="text-slate-400">Sent directly to `{agencyInfo.founder.email}` with all your specifications.</span>
+                  <div>
+                    <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold block">Official Agency Email</span>
+                    <span className="text-sm font-bold text-white group-hover:text-cyan-300 transition">
+                      {agencyInfo.founder.email}
+                    </span>
                   </div>
-                </div>
+                </a>
 
-                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <MessageSquare className="w-4 h-4" />
-                  </div>
-                  <div className="text-xs">
-                    <span className="font-bold text-white block">2. Automatic WhatsApp Dispatch</span>
-                    <span className="text-slate-400">Opens WhatsApp to `+91 {agencyInfo.founder.whatsapp}` for fastest response.</span>
-                  </div>
-                </div>
-
-                <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
-                    <FileSpreadsheet className="w-4 h-4" />
-                  </div>
-                  <div className="text-xs">
-                    <span className="font-bold text-white block">3. Google Sheets & Local Archive</span>
-                    <span className="text-slate-400">Logs your request securely so no project requirements are lost.</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Founder Contact Links */}
-              <div className="pt-2 space-y-3">
+                {/* Separate WhatsApp Button */}
                 <div
                   onClick={openWhatsAppDirect}
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-500 cursor-pointer transition group"
+                  className="flex items-center justify-between p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-500 cursor-pointer transition group"
                 >
-                  <div className="flex items-center gap-3">
-                    <MessageSquare className="w-5 h-5 text-emerald-400" />
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-slate-950 transition">
+                      <MessageSquare className="w-5 h-5" />
+                    </div>
                     <div>
-                      <span className="text-[10px] font-mono uppercase text-emerald-400 font-bold block">Direct WhatsApp</span>
-                      <span className="text-xs sm:text-sm font-bold text-white">{agencyInfo.founder.phone}</span>
+                      <span className="text-[11px] font-mono uppercase text-emerald-400 font-bold block">WhatsApp Support</span>
+                      <span className="text-sm font-bold text-white">{agencyInfo.founder.phone}</span>
                     </div>
                   </div>
                   <span className="text-xs font-mono text-emerald-400 px-2.5 py-1 rounded-md bg-emerald-500/20 font-bold">
@@ -169,23 +145,37 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
                   </span>
                 </div>
 
+                {/* Phone Call */}
                 <a
                   href={`tel:${agencyInfo.founder.phone}`}
-                  className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-cyan-500/40 transition group"
+                  className="flex items-center gap-3.5 p-4 rounded-xl bg-slate-950/70 border border-slate-800 hover:border-slate-700 transition group"
                 >
-                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <div className="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0 group-hover:bg-indigo-500 group-hover:text-white transition">
+                    <Phone className="w-5 h-5" />
+                  </div>
                   <div>
-                    <span className="text-[10px] font-mono uppercase text-slate-400 font-semibold block">Direct Call</span>
-                    <span className="text-xs sm:text-sm font-semibold text-white group-hover:text-cyan-300 transition">{agencyInfo.founder.phone}</span>
+                    <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold block">Direct Phone</span>
+                    <span className="text-sm font-semibold text-white">{agencyInfo.founder.phone}</span>
                   </div>
                 </a>
+
+                {/* Office Location */}
+                <div className="flex items-center gap-3.5 p-4 rounded-xl bg-slate-950/70 border border-slate-800">
+                  <div className="w-10 h-10 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-mono uppercase text-slate-400 font-semibold block">Location</span>
+                    <span className="text-sm text-slate-300">{agencyInfo.founder.location}</span>
+                  </div>
+                </div>
               </div>
 
               {/* Guarantees */}
               <div className="pt-3 border-t border-slate-800 space-y-1.5 text-xs text-slate-400">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4 text-emerald-400" />
-                  <span>Guaranteed callback within 2 hours</span>
+                  <span>Website preview ready in 24 to 48 hours</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-cyan-400" />
@@ -195,7 +185,7 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
             </div>
           </div>
 
-          {/* Right Column: Multi-Channel Inquiry Form */}
+          {/* Right Column: Clean Project Inquiry Form */}
           <div className="lg:col-span-7 w-full">
             <div className="rounded-2xl bg-slate-900/90 border border-slate-800 p-8 sm:p-10 shadow-2xl relative w-full">
               
@@ -207,53 +197,46 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
                   
                   <div className="space-y-1">
                     <h3 className="text-2xl font-black text-white">
-                      Inquiry Dispatched Successfully!
+                      Form Submitted Successfully!
                     </h3>
                     <p className="text-slate-300 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-                      Your details have been submitted. Md Mashood Alam has received your message and will review your requirements.
+                      Your form data has been logged into our client database & Google Sheets. A copy has been routed to <strong>{agencyInfo.founder.email}</strong>.
                     </p>
                   </div>
 
-                  {/* Submission Status Pills */}
+                  {/* Status Indicator */}
                   <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 max-w-md mx-auto space-y-2 text-left text-xs">
                     <div className="flex items-center justify-between">
                       <span className="text-slate-400 flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>Email to `{agencyInfo.founder.email}`:</span>
-                      </span>
-                      <span className="text-emerald-400 font-bold">Dispatched</span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-slate-400 flex items-center gap-1.5">
-                        <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>WhatsApp Instant Text:</span>
-                      </span>
-                      <span className="text-emerald-400 font-bold">Ready to Send</span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-slate-400 flex items-center gap-1.5">
                         <FileSpreadsheet className="w-3.5 h-3.5 text-cyan-400" />
-                        <span>Client Registry / Backup:</span>
+                        <span>Google Sheet & Database:</span>
                       </span>
-                      <span className="text-cyan-400 font-bold">Saved</span>
+                      <span className="text-emerald-400 font-bold">Recorded</span>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-400 flex items-center gap-1.5">
+                        <Mail className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Routed to Email:</span>
+                      </span>
+                      <span className="text-slate-300 font-mono text-[11px]">{agencyInfo.founder.email}</span>
                     </div>
                   </div>
 
                   <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <button
+                      onClick={() => setSubmitted(false)}
+                      className="px-6 py-3 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700 transition"
+                    >
+                      Submit Another Form
+                    </button>
+
+                    <button
                       onClick={openWhatsAppDirect}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 font-black text-xs shadow-lg shadow-emerald-500/25 hover:from-emerald-300 hover:to-teal-300 transition"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 font-bold text-xs shadow-md transition"
                     >
                       <MessageSquare className="w-4 h-4 fill-slate-950" />
-                      <span>Chat on WhatsApp With Mashood</span>
-                    </button>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-medium text-xs border border-slate-700"
-                    >
-                      Submit Another Inquiry
+                      <span>Chat on WhatsApp (Optional)</span>
                     </button>
                   </div>
                 </div>
@@ -286,7 +269,7 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-xs font-mono uppercase text-slate-300 font-bold">WhatsApp / Phone Number *</label>
+                      <label className="text-xs font-mono uppercase text-slate-300 font-bold">Phone Number *</label>
                       <input
                         type="tel"
                         required
@@ -300,7 +283,7 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-mono uppercase text-slate-300 font-bold">Email Address (Optional)</label>
+                      <label className="text-xs font-mono uppercase text-slate-300 font-bold">Email Address</label>
                       <input
                         type="email"
                         value={formData.email}
@@ -328,7 +311,7 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono uppercase text-slate-300 font-bold">Project Details & Location</label>
+                    <label className="text-xs font-mono uppercase text-slate-300 font-bold">Project Details & Requirements</label>
                     <textarea
                       rows={4}
                       value={formData.message}
@@ -338,20 +321,7 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
                     />
                   </div>
 
-                  {/* Auto-Open WhatsApp Checkbox */}
-                  <label className="flex items-center gap-2.5 cursor-pointer select-none text-xs text-slate-300 p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-slate-700 transition">
-                    <input
-                      type="checkbox"
-                      checked={formData.openWhatsAppOnSubmit}
-                      onChange={(e) => setFormData({ ...formData, openWhatsAppOnSubmit: e.target.checked })}
-                      className="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-400 accent-emerald-500"
-                    />
-                    <div className="flex items-center gap-1.5">
-                      <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
-                      <span><strong>Option 2 Enabled</strong>: Auto-open WhatsApp with pre-filled message upon submitting</span>
-                    </div>
-                  </label>
-
+                  {/* Submit Button (Only submits form, text: "Submit Form") + Separate WhatsApp Button */}
                   <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
                     <button
                       type="submit"
@@ -363,23 +333,23 @@ export default function ContactSection({ prefilledData, clearPrefill }) {
                       ) : (
                         <Send className="w-4 h-4" />
                       )}
-                      <span>Submit Website Inquiry (Email + WhatsApp + Sheets)</span>
+                      <span>Submit Form</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={openWhatsAppDirect}
-                      className="w-full sm:w-auto py-4 px-6 rounded-xl font-bold text-sm text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 transition flex items-center justify-center gap-2"
+                      className="w-full sm:w-auto py-4 px-6 rounded-xl font-bold text-sm text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
                     >
                       <MessageSquare className="w-4 h-4 fill-slate-950" />
-                      <span>Chat Directly</span>
+                      <span>Chat on WhatsApp</span>
                     </button>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-between text-[11px] text-slate-400 font-mono pt-1 gap-2">
-                    <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-400" /> Option 1: Gmail Alert</span>
-                    <span className="flex items-center gap-1"><Check className="w-3 h-3 text-emerald-400" /> Option 2: WhatsApp Auto-Send</span>
-                    <span className="flex items-center gap-1"><Check className="w-3 h-3 text-cyan-400" /> Option 3: Sheets Registry</span>
+                  <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono pt-1">
+                    <span>⚡ Quick 24-48 Hr Turnaround</span>
+                    <span>No Advance Full Payment Risk</span>
+                    <span>Data Logged to Google Sheet</span>
                   </div>
 
                 </form>
